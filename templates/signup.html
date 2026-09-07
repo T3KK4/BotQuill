@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+
+  <!-- Responsive viewport -->
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <meta
+    name="description"
+    content="Create an account"
+  >
+
+  <title>BotQuill | Signup</title>
+
+  <!-- Global stylesheet -->
+  <link rel="stylesheet" href="../static/styles/global.css">
+</head>
+
+<body>
+
+  <div class="page">
+
+    <!-- Header -->
+  <header>
+    <div class="container nav">
+      <a href="/" class="logo"><img src="../static/assets/hero.png" alt="logo"></a>
+
+      <nav aria-label="Main navigation">
+        <ul class="nav-links">
+          <li><a href="./base.html">Home</a></li>
+          <li><a href="#about">About</a></li>
+          <li><a href="#services">Services</a></li>
+          <li><a href="#contact">Contact</a></li>
+          <li><a href="./login.html">Login</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+    <!-- Signup -->
+    <main>
+      <div class="login-container">
+
+        <section class="login-card" aria-labelledby="signup-title">
+
+          <div class="login-header">
+            <h1 id="signup-title">Create Account</h1>
+            <p>Sign up to get started</p>
+          </div>
+
+          <form action="/signup" method="POST">
+
+            <!-- Full Name -->
+            <div class="form-group">
+              <label for="name">Full Name</label>
+              <input
+                type="text"
+                id="name"
+                name="name"
+                placeholder="John Doe"
+                autocomplete="name"
+                required
+              >
+            </div>
+
+            <!-- Email -->
+            <div class="form-group">
+              <label for="email">Email Address</label>
+              <input
+                type="email"
+                id="email"
+                name="email"
+                placeholder="you@example.com"
+                autocomplete="email"
+                required
+              >
+            </div>
+
+            <!-- Password -->
+            <div class="form-group">
+              <label for="password">Password</label>
+              <input
+                type="password"
+                id="password"
+                name="password"
+                placeholder="Create a password"
+                autocomplete="new-password"
+                minlength="8"
+                required
+              >
+            </div>
+
+            <!-- Confirm Password -->
+            <div class="form-group">
+              <label for="confirm-password">Confirm Password</label>
+              <input
+                type="password"
+                id="confirm-password"
+                name="confirm_password"
+                placeholder="Confirm your password"
+                autocomplete="new-password"
+                minlength="8"
+                required
+              >
+            </div>
+
+            <!-- Terms -->
+            <div class="form-options">
+              <label class="remember-me">
+                <input
+                  type="checkbox"
+                  name="terms"
+                  required
+                >
+                <span>
+                  I agree to the
+                  <a href="/terms">Terms & Conditions</a>
+                </span>
+              </label>
+            </div>
+
+            <!-- Submit -->
+            <button type="submit" class="btn">
+              Create Account
+            </button>
+
+          </form>
+
+          <!-- Login Link -->
+          <p class="signup">
+            Already have an account?
+            <a href="/login.html">Log in</a>
+          </p>
+
+        </section>
+
+      </div>
+    </main>
+
+    <!-- Footer -->
+    <footer>
+      <div class="container">
+        <p>&copy; 2026 BotQuill. All rights reserved.</p>
+      </div>
+    </footer>
+
+  </div>
+
+<script src="../static/scripts/signup.js"></script>
+
+</body>
+
+</html>

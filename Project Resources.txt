@@ -1,0 +1,11 @@
+| Layer                        | Technology                                                   | Reason                                                               |
+| ---------------------------- | ------------------------------------------------------------ | -------------------------------------------------------------------- |
+| **Backend Framework**        | **Flask** (Python)                                           | Lightweight, native Jinja2 support, perfect for content-driven sites |
+| **ORM / Database**           | **SQLAlchemy** + **SQLite** (dev) / **PostgreSQL** (prod)    | Flexible ORM; easy model relationships                               |
+| **Authentication**           | **Flask-Login** + **Werkzeug** (password hashing)            | Session-based auth for the writer dashboard                          |
+| **Forms**                    | **Flask-WTF**                                                | CSRF protection, file upload handling, validation                    |
+| **Payments**                 | **Stripe** (or **PayPal SDK**)                               | Industry standard for e-book payments                                |
+| **File Storage**             | Local filesystem (dev) / **AWS S3** or **Cloudinary** (prod) | For novel cover photos and e-book files                              |
+| **Templating**               | **Jinja2** (built into Flask)                                | As requested                                                         |
+| **Frontend**                 | Vanilla **HTML5**, **CSS3**, **JavaScript**                  | Lightweight; no heavy SPA framework needed                           |
+| **CSS Framework** (optional) | **Bootstrap 5** or **Tailwind CSS**                          | Speeds up responsive styling                                         |

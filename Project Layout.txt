@@ -1,0 +1,39 @@
+BotQuill/
+│
+├── app/
+│   ├── __init__.py              # Flask app factory
+│   ├── config.py                # Configuration classes
+│   ├── models.py                # Database models
+│   ├── forms.py                 # WTForms for all inputs
+│   │
+│   ├── routes/
+│   │   ├── __init__.py
+│   │   ├── main.py              # Public pages (home, about, blog, contact)
+│   │   ├── auth.py              # Login/logout for writer
+│   │   ├── dashboard.py         # Writer dashboard (protected)
+│   │   └── payments.py          # Stripe checkout & e-book delivery
+│   │
+│   ├── templates/
+│   │   ├── base.html            # Master layout
+│   │   ├── index.html           # Home / About writer
+│   │   ├── blog.html            # Blog posts + novels listing
+│   │   ├── novel_detail.html    # Individual novel page
+│   │   ├── contact.html         # Contact info + form
+│   │   ├── login.html           # Writer login
+│   │   └── dashboard/
+│   │       ├── base.html        # Dashboard layout
+│   │       ├── overview.html    # Dashboard home
+│   │       ├── manuscripts.html # Manuscript manager
+│   │       ├── novels.html      # Novel manager
+│   │       ├── blog_posts.html  # Blog post manager
+│   │       └── settings.html    # About/Contact info editor
+│   │
+│   └── static/
+│       ├── css/
+│       ├── js/
+│       └── uploads/             # Cover photos & e-book PDFs
+│
+├── migrations/                  # Flask-Migrate (database versions)
+├── tests/
+├── requirements.txt
+└── run.py
