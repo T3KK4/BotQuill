@@ -1,39 +1,41 @@
-BotQuill/
-│
+botquill/
 ├── app/
-│   ├── __init__.py              # Flask app factory
-│   ├── config.py                # Configuration classes
-│   ├── models.py                # Database models
-│   ├── forms.py                 # WTForms for all inputs
-│   │
+│   ├── __init__.py
+│   ├── config.py
+│   ├── extensions.py
+│   ├── models.py
+│   ├── forms.py
 │   ├── routes/
 │   │   ├── __init__.py
-│   │   ├── main.py              # Public pages (home, about, blog, contact)
-│   │   ├── auth.py              # Login/logout for writer
-│   │   ├── dashboard.py         # Writer dashboard (protected)
-│   │   └── payments.py          # Stripe checkout & e-book delivery
-│   │
+│   │   ├── main.py
+│   │   ├── auth.py
+│   │   ├── dashboard.py
+│   │   └── payments.py
 │   ├── templates/
-│   │   ├── base.html            # Master layout
-│   │   ├── index.html           # Home / About writer
-│   │   ├── blog.html            # Blog posts + novels listing
-│   │   ├── novel_detail.html    # Individual novel page
-│   │   ├── contact.html         # Contact info + form
-│   │   ├── login.html           # Writer login
+│   │   ├── base.html
+│   │   ├── index.html
+│   │   ├── about.html
+│   │   ├── blog.html
+│   │   ├── blog_post.html
+│   │   ├── novels.html
+│   │   ├── novel_detail.html
+│   │   ├── contact.html
+│   │   ├── login.html
+│   │   ├── register.html
 │   │   └── dashboard/
-│   │       ├── base.html        # Dashboard layout
-│   │       ├── overview.html    # Dashboard home
-│   │       ├── manuscripts.html # Manuscript manager
-│   │       ├── novels.html      # Novel manager
-│   │       ├── blog_posts.html  # Blog post manager
-│   │       └── settings.html    # About/Contact info editor
-│   │
+│   │       ├── base.html
+│   │       ├── overview.html
+│   │       ├── manuscripts.html
+│   │       ├── novels.html
+│   │       ├── edit_novel.html
+│   │       ├── blog_posts.html
+│   │       ├── edit_post.html
+│   │       └── settings.html
 │   └── static/
 │       ├── css/
-│       ├── js/
-│       └── uploads/             # Cover photos & e-book PDFs
-│
-├── migrations/                  # Flask-Migrate (database versions)
-├── tests/
+│       │   └── botquill.css
+│       └── uploads/
+├── migrations/
 ├── requirements.txt
+├── .env.example
 └── run.py

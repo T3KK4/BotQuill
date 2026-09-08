@@ -1,0 +1,79 @@
+/* 
+       Author: Ruke D. Alien
+       Github: https://github.com/T3KK4
+       Project: BotQuill
+       Client: Bot Cynthia Lyop
+*/
+
+/* Navigation Bar Styles */
+
+.navbar-brand {
+  font-size: 24px;
+  font-weight: 500;
+  color: #009970; /* Green accent */
+  transition: 0.3s color;
+}
+
+.login-button {
+  background-color: #009970; /* Green accent */
+  color: #fff; /* White text */
+  font-size: 14px;
+  padding: 8px 20px;
+  border-radius: 50px;
+  text-decoration: none;
+  transition: background-color 0.3s ease;
+}
+
+.login-button:hover {
+  background-color: #00b383; /* Lighter green on hover */
+}
+
+.navbar-toggler {
+  border: none;
+  background-color: transparent; /* Transparent background */
+  font-size: 1.25rem;
+  cursor: pointer;
+}
+
+.navbar-toggler:focus, .btn-close:focus {
+  outline: none;
+  box-shadow: none;
+}
+
+.nav-link {
+  color: #666777; /* Grey text */
+  font-weight: 500;
+  position: relative; /* For the underline effect */
+}
+
+.nav-link:hover, .nav-link:active {
+  color: #000; /* Black accent on hover and active */
+}
+
+@media (min-width: 991px) {
+  .nav-link::before {
+        content: ''; /* Create a pseudo-element for the underline */
+        position: absolute; /* Position it at the bottom of the link */
+        width: 0;
+        height: 2px;
+        bottom: 0;
+        left: 50%;
+        transform: translateX(-50%); /* Center the underline */
+        background-color: #009970; /* Green accent for underline */
+        transition: 0.3s ease-in-out;
+      }
+
+  .nav-link:hover::before, .nav-link.active::before {
+        width: 100%; /* Expand underline on hover and active */
+        visibility: visible; /* Show underline on hover and active */
+      }
+}
+
+/* Hero Section Styles */
+
+.hero-section {
+  background: var(--bg-image) no-repeat center;
+  background-size: cover;
+  width: 100%;
+  height: auto;
+}

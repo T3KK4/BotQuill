@@ -1,0 +1,47 @@
+# ---- Python ----
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+.Python
+
+# ---- Virtual environments ----
+venv/
+env/
+.venv/
+ENV/
+
+# ---- Environment / secrets ----
+.env
+.env.*
+!.env.example
+
+# ---- Flask / instance data ----
+instance/
+*.db
+*.sqlite
+*.sqlite3
+writer_site.db
+
+# ---- Uploaded user content (covers, e-books) ----
+# Keep the folder structure in git, ignore the actual uploaded files
+app/static/uploads/covers/*
+!app/static/uploads/covers/.gitkeep
+
+# ---- Testing / coverage ----
+.pytest_cache/
+.coverage
+htmlcov/
+.tox/
+
+# ---- Editors / OS ----
+.vscode/
+.idea/
+*.swp
+.DS_Store
+Thumbs.db
+
+# ---- Distribution / packaging ----
+build/
+dist/
+*.egg-info/

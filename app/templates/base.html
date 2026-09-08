@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta
+    name="description"
+    content="A simple responsive HTML page"
+  >
+  
+  <!-- Bootstrap CSS -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous">
+
+  <!-- Font Awesome -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" crossorigin="anonymous">
+
+  <title>{% block title %} BotQuill {% endblock %}</title>
+  <link rel="stylesheet" href="{{ url_for('static', filename='styles/base.css') }}">
+
+  <!-- Injects a dynamic image path as a CSS variable -->
+    <style>
+        :root {
+            --bg-image: url("{{ url_for('static', filename='assets/hero.jpg') }}");
+        }
+    </style>
+</head>
+
+<body>
+
+  <!-- Navigation Bar -->
+  <nav class="navbar navbar-expand-lg fixed-top">
+    <div class="container-fluid">
+        
+        <a class="navbar-brand me-auto" href="#">BotQuill</a>
+        
+        <div class="offcanvas offcanvas-end" tabindex="-1" id="offcanvasNavbar" aria-labelledby="offcanvasNavbarLabel">
+          <div class="offcanvas-header">
+            <h5 class="offcanvas-title" id="offcanvasNavbarLabel">BotQuill</h5>
+            <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+          </div>
+
+          <div class="offcanvas-body">
+            <ul class="navbar-nav justify-content-center flex-grow-1 pe-3">
+                <li class="nav-item">
+                  <a class="nav-link mx-lg-2 active" aria-current="page" href="#">Home</a>
+                </li>
+
+                <li class="nav-item">
+                  <a class="nav-link mx-lg-2" href="#">Author</a>
+                </li>
+
+                <li class="nav-item">
+                  <a class="nav-link mx-lg-2" href="#">About</a>
+                </li>
+
+                <li class="nav-item">
+                  <a class="nav-link mx-lg-2" href="#">Books</a>
+                </li>
+
+                <li class="nav-item">
+                  <a class="nav-link mx-lg-2" href="#">Blog</a>
+                </li>
+
+                
+              </ul>
+          </div>
+        </div>
+        <a href="{{ url_for('auth.login') }}" class="login-button">Login</a>
+
+        <button class="navbar-toggler" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasNavbar" aria-controls="offcanvasNavbar" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+    </div>
+  </nav>
+  <!-- End of Navigation Bar -->
+
+  <!-- Main Content -->
+  {% block content %}{% endblock %}
+  <!-- End of Main Content -->
+
+  <!-- Footer -->
+  <footer>
+    <div class="container" id="footer-container">
+      <p>&copy; 2026 BotQuill. All rights reserved.</p>
+    </div>
+  </footer>
+  <!-- End of Footer -->
+
+  <!-- Bootstrap JS -->
+  <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/umd/popper.min.js" integrity="sha384-I7E8VVD/ismYTF4hNIPjVp/Zjvgyol6VFvRkX/vR+Vc4jQkC+hVqc2pM8ODewa9r" crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.min.js" integrity="sha384-G/EV+4j2dNv+tEPo3++6LCgdCROaejBqfUeNjuKAiuXbjrxilcCdDz6ZAVfHWe1Y" crossorigin="anonymous"></script>
+
+</body>
+</html>
