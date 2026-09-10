@@ -5,13 +5,40 @@
        Client: Bot Cynthia Lyop
 */
 
+/* Site layout styling to fix squashed hero and content */
+
+.site-layout {
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+}
+.content-wrapper {
+    flex: 1; /* Grows to fill all available space, pushing footer down */
+}
+
 /* Navigation Bar Styles */
+
+.navbar {
+  background-color: #fff; /* White background */
+  height : 80px; /* Increased height */
+  margin: 20px; /* Margin around the navbar */
+  padding: 0.5rem; /* Padding inside the navbar */
+  border-radius: 20px; /* Rounded corners */
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Subtle shadow for depth */
+}
 
 .navbar-brand {
   font-size: 24px;
-  font-weight: 500;
+  font-weight: 700;
   color: #009970; /* Green accent */
   transition: 0.3s color;
+}
+
+.navbar-brand img {
+  /* responsive logo size */
+  max-height: 40px; /* Adjust as needed */
+  margin-right: 10px; /* Space between logo and text */
+  vertical-align: middle; /* Aligns the logo with the text */
 }
 
 .login-button {
@@ -72,8 +99,214 @@
 /* Hero Section Styles */
 
 .hero-section {
-  background: var(--bg-image) no-repeat center;
-  background-size: cover;
+  background: url('../assets/hero.jpg') no-repeat center;
+  background-size: cover; /* Ensure the image covers the entire section */
+  width: 100%; /* Full width */
+  display: flex; /* Flexbox for centering content */
+  height: auto; /* Adjust height as needed */
+}
+
+.hero-section::before {
+  content: ''; /* Create a pseudo-element for the overlay */
+  position: absolute;
+  top: 0;
+  left: 0;
   width: 100%;
-  height: auto;
+  height: 100%; /* Full height of the hero section */
+  background-color: rgba(0, 0, 0, 0.5); /* Dark overlay for better text visibility */
+}
+
+.hero-section .container {
+  height: 100vh; /* Full viewport height */
+  z-index: 1; /* Ensure content is above the overlay */
+  position: relative; /* Position relative to the hero section */
+}
+
+hero-section h1 {
+  font-size: 2rem; /* Responsive font size */
+  font-weight: 700; /* Bold text */
+}
+
+hero-section h4 {
+  font-size: 5rem; /* Responsive font size */
+  margin-top: 4rem; /* Space above the text */
+}
+
+/* Novel Showcase Styles */
+
+.novel-showcase {
+  padding: 5rem 0;
+  overflow: hidden;
+}
+
+.showcase-eyebrow {
+  color: #009970;
+  font-size: 0.75rem;
+  font-weight: 700;
+  letter-spacing: 0.12em;
+}
+
+.showcase-hint {
+  color: #6c757d;
+  font-size: 0.9rem;
+}
+
+.book-slider {
+  display: flex;
+  gap: 1.5rem;
+  overflow-x: auto;
+  padding: 0.5rem 0 1.25rem;
+  scroll-snap-type: x mandatory;
+  scrollbar-color: #009970 #e9f5f1;
+  scrollbar-width: thin;
+}
+
+.book-slider::-webkit-scrollbar {
+  height: 8px;
+}
+
+.book-slider::-webkit-scrollbar-track {
+  background: #e9f5f1;
+  border-radius: 10px;
+}
+
+.book-slider::-webkit-scrollbar-thumb {
+  background: #009970;
+  border-radius: 10px;
+}
+
+.book-card {
+  flex: 0 0 clamp(220px, 24vw, 280px);
+  overflow: hidden;
+  background: #fff;
+  border: 1px solid #e9ecef;
+  border-radius: 14px;
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.08);
+  scroll-snap-align: start;
+  transition: transform 0.25s ease, box-shadow 0.25s ease;
+}
+
+.book-card:hover {
+  box-shadow: 0 10px 26px rgba(0, 0, 0, 0.14);
+  transform: translateY(-4px);
+}
+
+.book-card > img {
+  display: block;
+  width: 100%;
+  aspect-ratio: 3 / 4;
+  object-fit: cover;
+}
+
+.book-card-body {
+  padding: 1.25rem;
+}
+
+.book-card h3 {
+  margin: 0;
+  color: #212529;
+  font-size: 1.15rem;
+  font-weight: 700;
+}
+
+.book-author {
+  margin: 0.35rem 0 0.75rem;
+  color: #009970;
+  font-size: 0.95rem;
+  font-weight: 600;
+}
+
+.book-card time {
+  display: block;
+  color: #6c757d;
+  font-size: 0.8rem;
+}
+
+.book-actions {
+  display: flex;
+  gap: 0.75rem;
+  margin-top: 1.25rem;
+}
+
+.book-actions a {
+  flex: 1;
+  padding: 0.6rem 0.75rem;
+  border-radius: 8px;
+  font-size: 0.9rem;
+  font-weight: 600;
+  text-align: center;
+  text-decoration: none;
+  transition: background-color 0.2s ease, color 0.2s ease;
+}
+
+.book-buy {
+  background: #009970;
+  border: 1px solid #009970;
+  color: #fff;
+}
+
+.book-buy:hover,
+.book-buy:focus {
+  background: #007a5a;
+  border-color: #007a5a;
+  color: #fff;
+}
+
+.book-preview {
+  background: transparent;
+  border: 1px solid #009970;
+  color: #009970;
+}
+
+.book-preview:hover,
+.book-preview:focus {
+  background: #009970;
+  color: #fff;
+}
+
+@media (max-width: 576px) {
+  .novel-showcase {
+    padding: 3.5rem 0;
+  }
+
+  .showcase-hint {
+    display: none;
+  }
+
+  .book-slider {
+    gap: 1rem;
+  }
+
+  .book-card {
+    flex-basis: min(78vw, 280px);
+  }
+}
+
+/* Blog Section Styles */
+
+.blog-showcase .btn {
+  background-color: #009970;
+  border-color: #009970;
+  color: #fff;
+  transition: background-color 0.3s ease;
+}
+
+.blog-showcase .btn:hover,
+.blog-showcase .btn:focus {
+  background-color: #00b383; /* Lighter green on hover */
+  border-color: #00b383; /* Lighter green on hover */
+  color: #fff;
+}
+
+.blog-showcase small {
+  color: #037053 !important;
+}
+
+/* Footer Styles */
+footer {
+  padding: 2rem 0;
+  border-top: 1px solid #ddd;
+  text-align: center;
+  color: #666;
+  font-size: 0.9rem;
 }

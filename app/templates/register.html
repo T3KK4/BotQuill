@@ -1,7 +1,100 @@
-{% extends "base.html" %}
+{% extends "auth.html" %}
 
 {% block title %} BotQuill | Sign Up {% endblock %}
 
 {% block content %}
-  
+  <main class="register">
+    <div class="container">
+        
+        <!-- Login Form -->
+         <div class="form-box login">
+            <form action="#">
+              <h1>Login</h1>
+              <div class="input-box">
+                <input type="text" placeholder="Enter username" required>
+                <i class="fa fa-user"></i>
+              </div>
+
+              <div class="input-box">
+                <input type="password" placeholder="Enter password" required>
+                <i class="fa fa-lock"></i>
+              </div>
+
+              <div class="forgot-link">
+                <a href="#">Forgot Password?</a>
+              </div>
+              
+              <button type="submit" class="btn">Login</button>
+              <p>Or login using socials</p>
+
+              <div class="social-icons">
+                <a href="#"><i class="fa-brands fa-google"></i></a>
+                <a href="#"><i class="fa-brands fa-facebook-f"></i></a>
+                <a href="#"><i class="fa-brands fa-square-x-twitter"></i></a>
+              </div>
+            </form>
+         </div>
+        <!-- End of Login Form -->
+
+        <!-- Register Form -->
+         <div class="form-box register">
+            <form action="#">
+              <h1>Sign Up</h1>
+              <div class="input-box">
+                <input type="text" placeholder="Enter username" required>
+                <i class="fa fa-user"></i>
+              </div>
+
+              <div class="input-box">
+                <input type="email" placeholder="Enter email" required>
+                <i class="fa-solid fa-at"></i>
+              </div>
+
+              <div class="input-box">
+                <input type="password" placeholder="Enter password" required>
+                <i class="fa fa-lock"></i>
+              </div>
+
+              <div class="input-box">
+                <input type="password" placeholder="Confirm password" required>
+                <i class="fa fa-lock"></i>
+              </div>
+
+              <button type="submit" class="btn">Sign Up</button>
+              <p>Or sign up using socials</p>
+
+              <div class="social-icons">
+                <a href="#"><i class="fa-brands fa-google"></i></a>
+                <a href="#"><i class="fa-brands fa-facebook-f"></i></a>
+                <a href="#"><i class="fa-brands fa-square-x-twitter"></i></a>
+              </div>
+            </form>
+         </div>
+        <!-- End of Register Form -->
+        
+        <!-- Toggle Box -->
+         <div class="toggle-box">
+
+            <!-- Toggle Box Left -->
+            <div class="toggle-panel toggle-left">
+                <h1>Welcome, Back</h1>
+                <p>Already have an account? Sign In</p>
+                <button class="btn register-btn">Sign Up</button>
+            </div>
+
+            <!-- Toggle Box Right -->
+            <div class="toggle-panel toggle-right">
+                <h1>Hello, Welcome</h1>
+                <p>Don't have an account? Sign Up</p>
+                <button class="btn login-btn">Login</button>
+            </div>
+
+         </div>
+        <!-- End of Toggle Box -->
+
+    </div>
+    <!-- End of Container -->
+  </main>
+
+  <script src="{{ url_for('static', filename='scripts/register.js') }}"></script>
 {% endblock %}

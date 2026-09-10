@@ -1,14 +1,211 @@
 {% extends "base.html" %}
 
-{% block title %} BotQuill | Welcome {% endblock %}
+{% block title %} Cynthia | Welcome {% endblock %}
 
 {% block content %}
   
     <!-- Hero Section -->
     <section class="hero-section">
-    
+        <div class="container d-flex align-items-center justify-content-center flex-column text-center text-white">
+            <h1>Cynthia's Library</h1>
+            <h4>Your gateway to a world of imagination and Wonder...</h4>
+            <a href="{{ url_for('auth.register') }}" class="btn btn-primary">Get Started</a>
+        </div>
     </section>
+    <hr>
     <!-- End of Hero -->
 
-  
+    <!-- Horizontal Sliding Book Showcase Section -->
+    <section class="novel-showcase">
+        <div class="container">
+            <div class="d-flex justify-content-between align-items-end gap-3 mb-4">
+                <div>
+                    <p class="showcase-eyebrow mb-1">CURATED FOR YOU</p>
+                    <h2 class="mb-0">Featured Novels</h2>
+                </div>
+                <p class="showcase-hint mb-0">Swipe to explore</p>
+            </div>
+
+            <div class="book-slider" aria-label="Featured novels">
+                <article class="book-card">
+                    <img src="https://picsum.photos/seed/whispers-in-ink/480/680" alt="Cover of Whispers in Ink">
+                    <div class="book-card-body">
+                        <h3>Whispers in Ink</h3>
+                        <p class="book-author">Amara Okafor</p>
+                        <time datetime="2026-08-21">Uploaded Aug 21, 2026</time>
+                        <div class="book-actions">
+                            <a href="#" class="book-buy" aria-label="Buy Whispers in Ink for ₦4,500">₦4,500</a>
+                            <a href="#" class="book-preview">Preview</a>
+                        </div>
+                    </div>
+                </article>
+
+                <article class="book-card">
+                    <img src="https://picsum.photos/seed/the-lagos-skyline/480/680" alt="Cover of The Lagos Skyline">
+                    <div class="book-card-body">
+                        <h3>The Lagos Skyline</h3>
+                        <p class="book-author">Tobi Adeyemi</p>
+                        <time datetime="2026-08-12">Uploaded Aug 12, 2026</time>
+                        <div class="book-actions">
+                            <a href="#" class="book-buy" aria-label="Buy The Lagos Skyline for ₦5,000">₦5,000</a>
+                            <a href="#" class="book-preview">Preview</a>
+                        </div>
+                    </div>
+                </article>
+
+                <article class="book-card">
+                    <img src="https://picsum.photos/seed/river-of-stars/480/680" alt="Cover of River of Stars">
+                    <div class="book-card-body">
+                        <h3>River of Stars</h3>
+                        <p class="book-author">Chinwe Nwosu</p>
+                        <time datetime="2026-07-30">Uploaded Jul 30, 2026</time>
+                        <div class="book-actions">
+                            <a href="#" class="book-buy" aria-label="Buy River of Stars for ₦3,800">₦3,800</a>
+                            <a href="#" class="book-preview">Preview</a>
+                        </div>
+                    </div>
+                </article>
+
+                <article class="book-card">
+                    <img src="https://picsum.photos/seed/echoes-of-ibadan/480/680" alt="Cover of Echoes of Ibadan">
+                    <div class="book-card-body">
+                        <h3>Echoes of Ibadan</h3>
+                        <p class="book-author">Damilola Bello</p>
+                        <time datetime="2026-07-18">Uploaded Jul 18, 2026</time>
+                        <div class="book-actions">
+                            <a href="#" class="book-buy" aria-label="Buy Echoes of Ibadan for ₦4,200">₦4,200</a>
+                            <a href="#" class="book-preview">Preview</a>
+                        </div>
+                    </div>
+                </article>
+            </div>
+        </div>
+    </section>
+    <hr>
+    <!-- End of Novel Showcase -->
+
+    <!-- Blog Section -->
+    <section class="blog-showcase py-5">
+        <div class="container">
+            <div class="text-center mb-5">
+                <h2>Latest From the Blog</h2>
+                <p class="text-muted mb-0">Stories, ideas, and inspiration from Cynthia's desk to your eyes.</p>
+            </div>
+
+            <div class="row g-4">
+                <!-- Blog post 1 -->
+                <div class="col-12 col-md-6 col-lg-4">
+                    <article class="card h-100 shadow-sm border-0 overflow-hidden">
+                        <div class="row g-0 h-100">
+                            <div class="col-4 col-md-12">
+                                <img
+                                    src="https://picsum.photos/seed/writer/600/400"
+                                    class="img-fluid h-100 w-100 object-fit-cover"
+                                    alt="Writer working on a manuscript"
+                                >
+                            </div>
+
+                            <div class="col-8 col-md-12">
+                                <div class="card-body d-flex flex-column h-100">
+                                    <small class="text-primary mb-2">WRITING</small>
+                                    <h5 class="card-title">Travails of a Writer</h5>
+                                    <p class="card-text text-muted">
+                                        A look at the challenges, lessons, and small victories behind every great story.
+                                    </p>
+                                    <a href="#" class="btn btn-primary mt-auto align-self-start">Read More</a>
+                                </div>
+                            </div>
+                        </div>
+                    </article>
+                </div>
+
+                <!-- Blog post 2 -->
+                <div class="col-12 col-md-6 col-lg-4">
+                    <article class="card h-100 shadow-sm border-0 overflow-hidden">
+                        <div class="row g-0 h-100">
+                            <div class="col-4 col-md-12">
+                                <img
+                                    src="https://picsum.photos/seed/creative/600/400"
+                                    class="img-fluid h-100 w-100 object-fit-cover"
+                                    alt="Creative workspace"
+                                >
+                            </div>
+
+                            <div class="col-8 col-md-12">
+                                <div class="card-body d-flex flex-column h-100">
+                                    <small class="text-primary mb-2">CREATIVITY</small>
+                                    <h5 class="card-title">The Mind of a Creative Genius</h5>
+                                    <p class="card-text text-muted">
+                                        Explore the habits and perspectives that help creative ideas come alive.
+                                    </p>
+                                    <a href="#" class="btn btn-primary mt-auto align-self-start">Read More</a>
+                                </div>
+                            </div>
+                        </div>
+                    </article>
+                </div>
+
+                <!-- Blog post 3 -->
+                <div class="col-12 col-md-6 col-lg-4">
+                    <article class="card h-100 shadow-sm border-0 overflow-hidden">
+                        <div class="row g-0 h-100">
+                            <div class="col-4 col-md-12">
+                                <img
+                                    src="https://picsum.photos/seed/ideas/600/400"
+                                    class="img-fluid h-100 w-100 object-fit-cover"
+                                    alt="Notebook with creative ideas"
+                                >
+                            </div>
+
+                            <div class="col-8 col-md-12">
+                                <div class="card-body d-flex flex-column h-100">
+                                    <small class="text-primary mb-2">IDEAS</small>
+                                    <h5 class="card-title">Thinking Outside the Box</h5>
+                                    <p class="card-text text-muted">
+                                        Fresh ways to challenge assumptions and find better solutions to everyday problems.
+                                    </p>
+                                    <a href="#" class="btn btn-primary mt-auto align-self-start">Read More</a>
+                                </div>
+                            </div>
+                        </div>
+                    </article>
+                </div>
+            </div>
+
+            <div class="text-center mt-5">
+                <a href="#" class="btn btn-outline-primary">View All Blog Posts</a>
+            </div>
+        </div>
+    </section>
+    <!-- End Blog Section -->
+
+    <!-- About Section -->
+    <section class="about-section py-5">
+        <div class="container">
+            <div class="row align-items-center g-4 g-lg-5">
+                <div class="col-12 col-md-5">
+                    <img
+                        src="{{ url_for('static', filename='assets/cynthia_beauty.jpg') }}"
+                        class="img-fluid w-100 rounded-4 shadow-sm"
+                        alt="Portrait of novelist Cynthia"
+                    >
+                </div>
+                <div class="col-12 col-md-7">
+                    <p class="text-success fw-semibold text-uppercase small mb-2">Meet the novelist</p>
+                    <h2 class="mb-3">About Cynthia</h2>
+                    <p class="text-muted">
+                        Cynthia is a storyteller whose work explores the quiet courage, rich memories, and
+                        everyday magic that shape our lives. Her novels bring together vivid characters and
+                        heartfelt moments that stay with readers long after the final page.
+                    </p>
+                    <p class="text-muted mb-0">
+                        Through Cynthia's Library, she shares her published stories, writing reflections, and
+                        a growing collection of books for readers who enjoy meaningful, imaginative fiction.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- End of About Section -->
+
 {% endblock %}

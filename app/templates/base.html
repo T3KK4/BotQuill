@@ -14,28 +14,23 @@
   <!-- Font Awesome -->
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" crossorigin="anonymous">
 
-  <title>{% block title %} BotQuill {% endblock %}</title>
+  <title>{% block title %} Bot Cynthia {% endblock %}</title>
   <link rel="stylesheet" href="{{ url_for('static', filename='styles/base.css') }}">
-
-  <!-- Injects a dynamic image path as a CSS variable -->
-    <style>
-        :root {
-            --bg-image: url("{{ url_for('static', filename='assets/hero.jpg') }}");
-        }
-    </style>
 </head>
 
-<body>
+<body class="site-layout">
 
   <!-- Navigation Bar -->
   <nav class="navbar navbar-expand-lg fixed-top">
-    <div class="container-fluid">
+    <div class="container">
         
-        <a class="navbar-brand me-auto" href="#">BotQuill</a>
+        <a class="navbar-brand" href="#">
+            Cynthia
+        </a>
         
         <div class="offcanvas offcanvas-end" tabindex="-1" id="offcanvasNavbar" aria-labelledby="offcanvasNavbarLabel">
           <div class="offcanvas-header">
-            <h5 class="offcanvas-title" id="offcanvasNavbarLabel">BotQuill</h5>
+            <h5 class="offcanvas-title" id="offcanvasNavbarLabel">Bot Cynthia</h5>
             <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
           </div>
 
@@ -43,10 +38,6 @@
             <ul class="navbar-nav justify-content-center flex-grow-1 pe-3">
                 <li class="nav-item">
                   <a class="nav-link mx-lg-2 active" aria-current="page" href="#">Home</a>
-                </li>
-
-                <li class="nav-item">
-                  <a class="nav-link mx-lg-2" href="#">Author</a>
                 </li>
 
                 <li class="nav-item">
@@ -67,21 +58,40 @@
         </div>
         <a href="{{ url_for('auth.login') }}" class="login-button">Login</a>
 
-        <button class="navbar-toggler" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasNavbar" aria-controls="offcanvasNavbar" aria-label="Toggle navigation">
+        <button class="navbar-toggler pe-0" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasNavbar" aria-controls="offcanvasNavbar" aria-label="Toggle navigation">
           <span class="navbar-toggler-icon"></span>
         </button>
     </div>
   </nav>
   <!-- End of Navigation Bar -->
-
+  
   <!-- Main Content -->
-  {% block content %}{% endblock %}
+  <div class="content-wrapper">
+      {% block content %}{% endblock %}
+  </div>
   <!-- End of Main Content -->
 
   <!-- Footer -->
   <footer>
-    <div class="container" id="footer-container">
-      <p>&copy; 2026 BotQuill. All rights reserved.</p>
+    <div class="container">
+      <div class="row align-items-center gy-3">
+        <div class="col-12 col-md-4 text-md-start">
+          <p class="mb-0">&copy; 2026 Cynthia's Library. All rights reserved.</p>
+        </div>
+
+        <div class="col-12 col-md-4">
+          <a href="#" class="text-decoration-none text-muted" aria-label="Email Cynthia">
+            <i class="fa-solid fa-envelope me-2" aria-hidden="true"></i>cynthia@example.com
+          </a>
+        </div>
+
+        <div class="col-12 col-md-4 text-md-end">
+          <a href="#" class="text-muted me-3" aria-label="LinkedIn"><i class="fa-brands fa-linkedin fa-lg" aria-hidden="true"></i></a>
+          <a href="#" class="text-muted me-3" aria-label="Instagram"><i class="fa-brands fa-instagram fa-lg" aria-hidden="true"></i></a>
+          <a href="#" class="text-muted me-3" aria-label="X (formerly Twitter)"><i class="fa-brands fa-twitter fa-lg" aria-hidden="true"></i></a>
+          <a href="#" class="text-muted" aria-label="TikTok"><i class="fa-brands fa-tiktok fa-lg" aria-hidden="true"></i></a>
+        </div>
+      </div>
     </div>
   </footer>
   <!-- End of Footer -->

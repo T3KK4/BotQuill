@@ -49,8 +49,8 @@ select {
 -------------------- */
 
 .container {
-  width: min(90%, 1200px);
-  margin-inline: auto;
+  width: min(90%, 1200px); /* Responsive container width */
+  margin-inline: auto; /* Center horizontally */
 }
 
 
@@ -76,7 +76,7 @@ header {
 }
 
 .logo img {
-  width: 140px;
+  width: 80px;
   height: auto;
   display: block;
 }
@@ -102,6 +102,10 @@ main {
 -------------------- */
 
 .hero {
+  background: url(./app/static/assets/hero.jpg) no-repeat center;
+  background-size: cover; /* Ensure the image covers the entire section */
+  width: 100%;
+  height: auto; /* Adjust height as needed */
   padding: 5rem 0;
   text-align: center;
 }
