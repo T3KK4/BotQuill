@@ -30,14 +30,14 @@
         
         <div class="offcanvas offcanvas-end" tabindex="-1" id="offcanvasNavbar" aria-labelledby="offcanvasNavbarLabel">
           <div class="offcanvas-header">
-            <h5 class="offcanvas-title" id="offcanvasNavbarLabel">Bot Cynthia</h5>
+            <h5 class="offcanvas-title" id="offcanvasNavbarLabel">Cynthia's Library</h5>
             <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
           </div>
 
           <div class="offcanvas-body">
             <ul class="navbar-nav justify-content-center flex-grow-1 pe-3">
                 <li class="nav-item">
-                  <a class="nav-link mx-lg-2 active" aria-current="page" href="#">Home</a>
+                  <a class="nav-link mx-lg-2 active" aria-current="page" href="{{ url_for('main.index') }}">Home</a>
                 </li>
 
                 <li class="nav-item">
@@ -45,11 +45,11 @@
                 </li>
 
                 <li class="nav-item">
-                  <a class="nav-link mx-lg-2" href="#">Books</a>
+                  <a class="nav-link mx-lg-2" href="{{ url_for('main.books') }}">Books</a>
                 </li>
 
                 <li class="nav-item">
-                  <a class="nav-link mx-lg-2" href="#">Blog</a>
+                  <a class="nav-link mx-lg-2" href="{{ url_for('main.blog') }}">Blog</a>
                 </li>
 
                 
