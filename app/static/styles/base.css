@@ -74,7 +74,12 @@
 }
 
 .nav-link:hover, .nav-link:active {
-  color: #000; /* Black accent on hover and active */
+  color: #000; /* Black accent on hover and pressed links */
+}
+
+.nav-link.active {
+  color: #009970;
+  font-weight: 700;
 }
 
 @media (min-width: 991px) {

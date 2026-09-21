@@ -30,6 +30,49 @@ main {
     background-blend-mode: overlay;
 }
 
+/* Flash messages */
+.flash-messages {
+    position: fixed;
+    top: clamp(12px, 3vw, 24px);
+    left: 50%;
+    z-index: 10;
+    width: min(92vw, 520px);
+    transform: translateX(-50%);
+}
+
+.flash-message {
+    padding: 14px 18px;
+    border: 1px solid transparent;
+    border-radius: 10px;
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.14);
+    font-size: 14px;
+    font-weight: 500;
+    line-height: 1.4;
+    text-align: center;
+}
+
+.flash-message + .flash-message {
+    margin-top: 10px;
+}
+
+.flash-message-success {
+    color: #0d5c4a;
+    background: #e3f6f0;
+    border-color: #4cba9d;
+}
+
+.flash-message-error {
+    color: #8f1d1d;
+    background: #fff0f0;
+    border-color: #e28484;
+}
+
+.flash-message-info {
+    color: #175b89;
+    background: #eef8ff;
+    border-color: #79bde8;
+}
+
 /* Container */
 .container {
     position: relative;
@@ -264,6 +307,11 @@ form {
     .container p,
     .forgot-link a {
         font-size: 14px;
+    }
+
+    .flash-message {
+        padding: 12px 14px;
+        font-size: 13px;
     }
 
     .form-box {
