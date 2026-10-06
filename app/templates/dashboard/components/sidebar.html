@@ -1,0 +1,105 @@
+<div class="dashboard-shell">
+  <button class="sidebar-toggle d-md-none" id="sidebarToggle" type="button" aria-label="Toggle sidebar" aria-expanded="false">
+    <i class="fa-solid fa-bars"></i>
+  </button>
+
+  <aside class="dashboard-sidebar d-flex flex-column flex-shrink-0 p-3 text-bg-dark">
+    <a href="{{ url_for('dashboard.overview') }}" class="d-flex align-items-center mb-3 mb-md-0 me-md-auto text-white text-decoration-none">
+      <i class="fa-solid fa-pen-nib me-2"></i>
+      <span class="fs-5 fw-semibold">Admin Board</span>
+    </a>
+
+    <hr>
+
+    <nav class="nav nav-pills flex-column">
+      <a class="nav-link {{ 'active' if request.endpoint == 'dashboard.overview' else 'text-white-50' }}"
+         href="{{ url_for('dashboard.overview') }}">
+        <i class="fa-solid fa-gauge me-2"></i>Overview
+      </a>
+
+      <div class="mt-2">
+        <div class="text-uppercase small text-white-50 px-2 mb-2">Writing</div>
+
+        <a class="nav-link {{ 'active' if request.endpoint in ['dashboard.manuscripts', 'dashboard.edit_manuscript'] else 'text-white-50' }}"
+           href="{{ url_for('dashboard.manuscripts') }}">
+          <i class="fa-solid fa-file-lines me-2"></i>Manuscripts
+        </a>
+
+        <a class="nav-link {{ 'active' if request.endpoint == 'dashboard.edit_manuscript' else 'text-white-50' }}"
+           href="{{ url_for('dashboard.edit_manuscript') }}">
+          <i class="fa-solid fa-plus me-2"></i>New Manuscript
+        </a>
+
+        <a class="nav-link {{ 'active' if request.endpoint in ['dashboard.novels', 'dashboard.edit_novel'] else 'text-white-50' }}"
+           href="{{ url_for('dashboard.novels') }}">
+          <i class="fa-solid fa-book me-2"></i>Novels
+        </a>
+
+        <a class="nav-link {{ 'active' if request.endpoint == 'dashboard.edit_novel' else 'text-white-50' }}"
+           href="{{ url_for('dashboard.edit_novel') }}">
+          <i class="fa-solid fa-square-plus me-2"></i>New Novel
+        </a>
+      </div>
+
+      <div class="mt-2">
+        <div class="text-uppercase small text-white-50 px-2 mb-2">Content</div>
+
+        <a class="nav-link {{ 'active' if request.endpoint in ['dashboard.blog_posts', 'dashboard.edit_blog_post'] else 'text-white-50' }}"
+           href="{{ url_for('dashboard.blog_posts') }}">
+          <i class="fa-solid fa-newspaper me-2"></i>Blog Posts
+        </a>
+
+        <a class="nav-link {{ 'active' if request.endpoint == 'dashboard.edit_blog_post' else 'text-white-50' }}"
+           href="{{ url_for('dashboard.edit_blog_post') }}">
+          <i class="fa-solid fa-pen-to-square me-2"></i>New Post
+        </a>
+      </div>
+
+      <div class="mt-2">
+        <div class="text-uppercase small text-white-50 px-2 mb-2">Settings</div>
+
+        <a class="nav-link {{ 'active' if request.endpoint == 'dashboard.settings' else 'text-white-50' }}"
+           href="{{ url_for('dashboard.settings') }}">
+          <i class="fa-solid fa-gear me-2"></i>Profile & Contact
+        </a>
+      </div>
+    </nav>
+
+    <hr>
+
+    <div class="mt-auto">
+      <a class="nav-link text-white-50" href="{{ url_for('auth.logout') }}">
+        <i class="fa-solid fa-right-from-bracket me-2"></i>Logout
+      </a>
+    </div>
+  </aside>
+</div>
+
+<script>
+  document.addEventListener('DOMContentLoaded', function () {
+    const toggleButton = document.getElementById('sidebarToggle');
+    const sidebar = document.querySelector('.dashboard-sidebar');
+
+    if (!toggleButton || !sidebar) return;
+
+    toggleButton.addEventListener('click', function () {
+      const isOpen = sidebar.classList.toggle('is-open');
+      document.body.classList.toggle('sidebar-open', isOpen);
+      toggleButton.setAttribute('aria-expanded', String(isOpen));
+    });
+
+    document.addEventListener('click', function (event) {
+      const isMobile = window.innerWidth < 768;
+      if (!isMobile || !sidebar.classList.contains('is-open')) return;
+
+      const clickedInsideSidebar = sidebar.contains(event.target);
+      const clickedToggle = toggleButton.contains(event.target);
+
+      if (!clickedInsideSidebar && !clickedToggle) {
+        sidebar.classList.remove('is-open');
+        document.body.classList.remove('sidebar-open');
+        toggleButton.setAttribute('aria-expanded', 'false');
+      }
+    });
+  });
+</script>

@@ -1,5 +1,5 @@
 from flask import Blueprint, render_template, redirect, url_for, flash, request
-from flask_login import login_user, login_required, current_user
+from flask_login import login_user, login_required, current_user, logout_user
 from app.forms import LoginForm, RegisterForm
 from app.models import User
 from app.extensions import db
@@ -25,6 +25,8 @@ def login():
 @auth_bp.route('/logout')
 @login_required
 def logout():
+    logout_user()
+    flash('You have been logged out.', category='info')
     return redirect(url_for('main.index'))
 
 
@@ -47,6 +49,17 @@ def register():
     return render_template('auth/register.html', login_form=login_form, register_form=register_form)
 
 
-@auth_bp.route('/writer-login')
+@auth_bp.route('/writer-login', methods=['GET', 'POST'])
 def writer_login():
-    return "<h2>Writer Login Page</h2>"
+    if current_user.is_authenticated and current_user.is_writer():
+        return redirect(url_for('dashboard.overview'))
+    
+    login_form = LoginForm()
+    register_form = RegisterForm()
+    if login_form.validate_on_submit():
+        user = User.query.filter_by(email=login_form.email.data).first()
+        if user and user.check_password(login_form.password.data) and user.is_writer():
+            login_user(user)
+            return redirect(url_for('dashboard.overview'))
+        flash('Invalid writer credentials!', category='error')
+    return render_template('auth/register.html', login_form=login_form, register_form=register_form, is_writer_login=True)
